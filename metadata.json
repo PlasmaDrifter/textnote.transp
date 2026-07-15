@@ -16,7 +16,8 @@
         "Icon": "text-x-generic",
         "Id": "local.widget.textnote.transp",
         "License": "GPL-2.0+",
-        "Name": "textnote transp"
+        "Name": "textnote transp",
+        "Version": "1.0"
     },
     "X-Plasma-API-Minimum-Version": "6.0"
 }
