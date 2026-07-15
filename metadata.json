@@ -1,0 +1,22 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "user@example.com",
+                "Name": "User"
+            }
+        ],
+        "Category": "Utilities",
+        "Description": "A simple text note widget",
+        "EnabledByDefault": true,
+        "FormFactors": [
+            "desktop"
+        ],
+        "Icon": "text-x-generic",
+        "Id": "local.widget.textnote.transp",
+        "License": "GPL-2.0+",
+        "Name": "textnote transp"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}

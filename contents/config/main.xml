@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+    <kcfgfile name=""/>
+    
+    <group name="General">
+        <entry name="noteText" type="String">
+            <default>nohup plasmashell --replace &gt; /dev/null 2&gt;&amp;1 &amp;
+
+gmount
+gunmount
+__________________________
+
+DMV-Medical 5/27
+
+yellow=trailer
+red=truck
+__________________________
+pavucontrol
+
+agy
+copilot
+
+Thinkpad - Rewq1525
+152555
+
+/models
+/usage
+
+ff00ff
+55ffff
+504646
+d5acd6
+</default>
+        </entry>
+        <entry name="textColor" type="Color">
+            <default>#d5acd6</default>
+        </entry>
+        <entry name="textSize" type="Int">
+            <default>16</default>
+        </entry>
+        <entry name="bgOpacity" type="Double">
+            <default>0.45</default>
+        </entry>
+        <entry name="fontFamily" type="String">
+            <default>Noto Sans</default>
+        </entry>
+        <entry name="fontWeight" type="Int">
+            <default>0</default>
+        </entry>
+    </group>
+</kcfg>
