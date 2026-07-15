@@ -2,6 +2,9 @@
 
 A simple KDE Plasma desktop widget for keeping a persistent text note directly on your desktop, with a transparent background.
 
+![textnote.transp](textnote-transp.png)
+![textnote.transp](desktop-1.png)
+
 ## Features
 
 - Editable plain-text note on the desktop
