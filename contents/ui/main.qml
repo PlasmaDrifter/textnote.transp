@@ -14,7 +14,6 @@ PlasmoidItem {
     
     Plasmoid.backgroundHints: PlasmaCore.Types.NoBackground
 
-    property real sharedOpacity: 0.3
     property bool disableSave: true
     property Item textAreaInstance: null
     readonly property var fontWeights: [400, 500, 600, 700]
@@ -35,18 +34,7 @@ PlasmoidItem {
         onNewData: (sourceName, data) => {
             disconnectSource(sourceName)
 
-            if (sourceName.indexOf("plasma-custom-opacity.txt") !== -1) {
-                var stdout = data["stdout"] || "";
-                var val = parseFloat(stdout.trim());
-                if (!isNaN(val) && val >= 0.0 && val <= 1.0) {
-                    if (root.sharedOpacity !== val) {
-                        root.sharedOpacity = val;
-                    }
-                    if (Plasmoid.configuration.bgOpacity !== val) {
-                        Plasmoid.configuration.bgOpacity = val;
-                    }
-                }
-            } else if (sourceName.indexOf("plasma-custom-textnote-text.txt") !== -1) {
+            if (sourceName.indexOf("plasma-custom-textnote-text.txt") !== -1) {
                 if (sourceName.indexOf("cat ") !== -1) {
                     var stdout = data["stdout"] || "";
                     var b64Text = stdout.replace(/\s+/g, '');
@@ -71,16 +59,6 @@ PlasmoidItem {
         }
     }
 
-    Connections {
-        target: Plasmoid.configuration
-        function onBgOpacityChanged() {
-            var newOpacity = Plasmoid.configuration.bgOpacity;
-            if (Math.abs(root.sharedOpacity - newOpacity) > 0.01) {
-                executableDataSource.connectSource("echo " + newOpacity + " > /home/jmc/.config/plasma-custom-opacity.txt; echo 'done'");
-            }
-        }
-    }
-
     Timer {
         id: startupEnableTimer
         interval: 1000
@@ -88,19 +66,6 @@ PlasmoidItem {
         repeat: false
         onTriggered: {
             root.disableSave = false;
-        }
-    }
-
-
-
-    Timer {
-        id: sharedOpacityTimer
-        interval: 1000
-        running: true
-        repeat: true
-        triggeredOnStart: true
-        onTriggered: {
-            executableDataSource.connectSource("cat /home/jmc/.config/plasma-custom-opacity.txt");
         }
     }
     
